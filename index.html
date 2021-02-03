@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <title>MyReads</title>
+   <link rel="icon" href="assets/img/myreads.png"/>
+   <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@500&display=swap" rel="stylesheet">
+   <meta class="meta" http-equiv="refresh" content="">
+</head>
+
+<body>
+   <!-- MENU -->
+   <footer id="loadfooter">
+      <nav class="navbar navbar-light justify-content-center" style="background-color: #e3f2fd;">
+         <a class="navbar-brand" href="index.html">
+            <img src="assets/img/myreads.png" width="35" height="35" class="d-inline-block align-top" alt="MyReads">
+            MyReads
+         </a>
+      </nav>
+   </footer>
+   <!-- NAV -->
+   <main>
+      <nav class="nav row justify-content-center">
+         <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <!-- pl-5 pr-5 -->
+            <a class="nav-item nav-link active " id="nav-lendo" data-toggle="tab" href="#nav-livros-lendo"
+               role="tab" aria-controls="nav-livros-lendo" aria-selected="true">
+               <img class="icons-nav" src="assets/img/eye.png">
+               Currently Reading
+            </a>
+            <a class="nav-item nav-link " id="nav-quero-ler" data-toggle="tab" href="#navLivroQueroLer"
+               role="tab" aria-controls="navLivroQueroLer" aria-selected="false">
+               <img class="icons-nav" src="assets/img/bookmark (2).png">
+               Want to Read
+            </a>
+            <a class="nav-item nav-link " id="nav-ler" data-toggle="tab" href="#nav-paraler" role="tab"
+               aria-controls="nav-paraler" aria-selected="false">
+               <img class="icons-nav" src="assets/img/bookmark-1.png">
+               Read
+            </a>
+            <a class="nav-item nav-link " id="nav-pesquisas" data-toggle="tab" href="#nav-pesquisa" role="tab"
+               aria-controls="nav-pesquisas" aria-selected="false">
+               <img class="icons-nav" src="assets/img/search.png">
+               Search
+            </a>
+         </div>
+      </nav>
+      <!-- Gif -->
+      <div class="gif" ><img class="spinner" src="assets/img/carregando.gif" alt="Spinner" id="spinner"></div>
+
+      <section class="container-fluid">
+         <div class="tab-content" id="nav-tabContent">
+            <!-- CURRENTLY READING -->
+            <div class="tab-pane fade show active" id="nav-livros-lendo" role="tabpanel" aria-labelledby="nav-lendo">
+
+               <div id="prateleira-lendo" class="row pb-3 justify-content-center">
+                 
+               </div>
+            </div>
+            <!-- WANT TO READ -->
+            <div class="tab-pane fade" id="navLivroQueroLer" role="tabpanel" aria-labelledby="nav-quero-ler">
+               <div id="prateleira-quero-ler" class="row pb-3 justify-content-center">
+                  
+               </div>
+            </div>
+            <!-- READ -->
+            <div class="tab-pane fade" id="nav-paraler" role="tabpanel" aria-labelledby="nav-ler">
+               <div id="prateleira-ler" class="row pb-3 justify-content-center">
+                 
+               </div>
+            </div>
+            <!-- SEARCH -->
+            <div class="tab-pane fade" id="nav-pesquisa" role="tabpanel" aria-labelledby="nav-pesquisas">
+               <div id="prateleira-pesquisa" class="row p-1 justify-content-center">
+                  <form class="pesquisa">
+                     <button type="button" class="btn btn-primary input-pesquisar" data-toggle="modal" data-target="#pesquisarLivros">
+                        Pesquisar livro por categoria
+                     </button>
+                  </form>
+               </div>
+
+               <!-- Div padrao -->
+               <div id="padrao"><p id="esconde-p">Nenhum livro pesquisado</p></div>
+               <!-- Div Resultado da Pesquisa -->
+               <h4 class="esconde" id="tituloLivro"> </h4>
+               <div id="prateleira-da-pesquisa" class="row pb-3 justify-content-center">
+                  
+               </div>
+               <!-- Modal -->
+               <div class="modal fade " id="pesquisarLivros" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog " role="document">
+                    <div class="modal-content estilo-modal-pesquisa ">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Pesquise pelas Categorias</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+         </div>
+         <!-- Modal GetBook -->
+         <div class="modal fade" id="getBooksModal" tabindex="-1" role="dialog" aria-labelledby="">
+            <div class="modal-dialog gg" role="document">
+               <div class="modal-content" id="conteudo-modal-livro">
+                  <div class="modal-header p-1">
+                     <h5 class="modal-title" id="livro">Livro Detalhado</h5>
+                     <button type="button" class="close mr-1 center" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+                  <div class="modal-body p-0" id="corpo-livro">
+
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+      </section>
+      
+      <footer class="footer bg-light text-center text-lg-start">
+         <!-- Copyright -->
+         <div class="text-center p-2" style="background-color: #6c757d">
+           Academy OCC © 2020-2021 Created by:
+           <a class="text-dark" href="https://github.com/Vtres/compasso_2020-occ-e1-aval/">Vinicius Tres</a>
+         </div>
+       </footer>
+   </main>
+
+   <!-- Jquery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+   </script>   
+   <!-- Bootstrap -->
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+   <!-- Interno -->
+   <script src="api/api.js"></script>
+   <script src="assets/js/corpo.js"></script>
+   <script src="assets/js/prateleiras.js"></script>
+   <script src="assets/js/index.js"></script>
+   <script src="assets/js/pesquisar.js"></script>
+   <script src="assets/js/selector.js"></script>
+   <script src="assets/js/infoCard.js"></script>
+
+</body>
+
+</html>
