@@ -45,7 +45,11 @@ function divClicada(id) {
     searchBooks(texto).then(function(data) {
       const books = data.books;
       for (let index = 0; index < books.length; index++) {
-        divCerta.appendChild(criandoCorpo(books[index].id,books[index].title, books[index].imageLinks.thumbnail, books[index].authors))
+        if(books[index].imageLinks == null){
+          divCerta.appendChild(criandoCorpo(books[index].id,books[index].title, "../MyReads/assets/img/errorImg.png", books[index].authors))
+        }else{
+          divCerta.appendChild(criandoCorpo(books[index].id,books[index].title, books[index].imageLinks.thumbnail, books[index].authors));
+        }
       }
     });
     $(".spinner").hide();

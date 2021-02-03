@@ -15,13 +15,25 @@ function carregaLivros(){
          const books = data.books;
          for (var i=0; i<books.length; i++){
             if(books[i].shelf == "currentlyReading"){
-               navLendo.appendChild(criandoCorpo(books[i].id, books[i].title, books[i].imageLinks.smallThumbnail, books[i].authors))
+               if(books[i].imageLinks == null){
+                  navLendo.appendChild(criandoCorpo(books[i].id, books[i].title, "../MyReads/assets/img/errorImg.png", books[i].authors))
+               }else{
+                  navLendo.appendChild(criandoCorpo(books[i].id, books[i].title, books[i].imageLinks.smallThumbnail, books[i].authors))
+               }
             }
             if(books[i].shelf == "wantToRead"){
-               navQueroLer.appendChild(criandoCorpo(books[i].id, books[i].title, books[i].imageLinks.smallThumbnail, books[i].authors))
+               if(books[i].imageLinks == null){
+                  navQueroLer.appendChild(criandoCorpo(books[i].id, books[i].title, "../MyReads/assets/img/errorImg.png", books[i].authors))
+               }else{
+                  navQueroLer.appendChild(criandoCorpo(books[i].id, books[i].title, books[i].imageLinks.smallThumbnail, books[i].authors))
+               }
             }
             if(books[i].shelf == "read"){
-               navLer.appendChild(criandoCorpo(books[i].id, books[i].title, books[i].imageLinks.smallThumbnail, books[i].authors))
+               if(books[i].imageLinks == null){
+                  navLer.appendChild(criandoCorpo(books[i].id, books[i].title, "../MyReads/assets/img/errorImg.png", books[i].authors))
+               }else{
+                  navLer.appendChild(criandoCorpo(books[i].id, books[i].title, books[i].imageLinks.smallThumbnail, books[i].authors))
+               }    
             }
          }
        })
