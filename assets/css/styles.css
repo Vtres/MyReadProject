@@ -315,6 +315,13 @@ nav, .row{
     width: 99vw;
     margin-left: 0;
   }
+  .detalheLivro{
+    
+    width: 98%;
+    margin-top: 1.1rem;
+    margin: auto;
+  }
+  
 
 }
 
@@ -340,7 +347,7 @@ nav, .row{
 
   /* Ver Livro */
   .detalheLivro{
-    width: 100%;
+    width: 98%;
     margin-top: 1.1rem;
     margin: auto;
   }
@@ -369,7 +376,7 @@ nav, .row{
 @media screen and (max-width: 1350px){
   /* Ver Livro */
   .detalheLivro{
-    width: 99vw;
+    width: 98%;
     margin-top: 1.1rem;
     margin: auto;
   }
@@ -393,6 +400,9 @@ nav, .row{
   .modal-body{
     overflow-y: auto;
     height: 500px;
+  }
+  .gg{
+    margin-left: 0;
   }
 }
 
